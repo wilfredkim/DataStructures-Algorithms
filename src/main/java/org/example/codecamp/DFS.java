@@ -23,7 +23,7 @@ public class DFS {
         while(stack.size()>0){
             String current =stack.pop();
             System.out.println(current);
-            for(String s: graph.adj[])
+            //for(String s: graph.adj[])
         }
 
 
