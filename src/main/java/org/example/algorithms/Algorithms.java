@@ -319,4 +319,45 @@ public class Algorithms {
 //stable and unstable sorts
 //it two elements are the same , then sorted algorithm should the original order -> stable sort
 //it two elements are the same , then sorted algorithm does not maintain  the original order -> unstable sort
+
+    public static int[] mergeSort(int[] nums) {
+        if (nums.length <= 1) {
+            return nums;
+        }
+        int middle = nums.length / 2;
+        int[] leftArray = Arrays.copyOfRange(nums, 0, middle);
+        int[] rightArray = Arrays.copyOfRange(nums, middle, nums.length);
+        return merge(leftArray, rightArray);
+    }
+
+    private static int[] merge(int[] leftArray, int[] rightArray) {
+        int i = 0;
+        int j = 0;
+        int k = 0;
+        int[] mix = new int[leftArray.length + rightArray.length];
+        while (i < leftArray.length && j < rightArray.length) {
+            if (leftArray[i] < rightArray[j]) {
+                mix[k] = leftArray[i];
+                i++;
+            } else {
+                mix[k] = rightArray[j];
+                j++;
+            }
+            k++;
+        }
+        while (i < leftArray.length) {
+            mix[k] = leftArray[i];
+            i++;
+            k++;
+        }
+        while (j < rightArray.length) {
+            mix[k] = rightArray[j];
+            j++;
+            k++;
+        }
+
+        return mix;
+    }
+
+
 }

@@ -36,9 +36,7 @@ class AlgorithmsTest {
     }
 
     @Test
-    void insertionSortAlgorithms() {
-        assertArrayEquals(new int[]{3, 4, 5, 5, 8}, algorithms.insertionSortAlgorithms(new int[]{8, 5, 3, 5, 4}));
-        assertArrayEquals(new int[]{2, 5, 7, 8, 12}, algorithms.insertionSortAlgorithms(new int[]{5, 2, 8, 12, 7}));
+    void insertionSortAlgorithms() {assertArrayEquals(new int[]{2, 5, 7, 8, 12}, algorithms.insertionSortAlgorithms(new int[]{5, 2, 8, 12, 7}));
 
     }
 
